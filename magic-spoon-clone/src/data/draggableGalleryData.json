@@ -1,0 +1,40 @@
+{
+  "cerealsFlavors": [
+    {
+      "_id": 0,
+      "image": "../assets/cereal-flavors/cereal-variety.png"
+    },
+    {
+      "_id": 1,
+      "image": "../assets/cereal-flavors/cereal-fruity.png"
+    },
+    {
+      "_id": 2,
+      "image": "../assets/cereal-flavors/cereal-peanut-butter.png"
+    },
+    {
+      "_id": 3,
+      "image": "../assets/cereal-flavors/cereal-cocoa.png"
+    },
+    {
+      "_id": 4,
+      "image": "../assets/cereal-flavors/cereal-cinnamon-roll.png"
+    },
+    {
+      "_id": 5,
+      "image": "../assets/cereal-flavors/cereal-frosted.png"
+    },
+    {
+      "_id": 6,
+      "image": "../assets/cereal-flavors/cereal-blueberry-muffin.png"
+    },
+    {
+      "_id": 7,
+      "image": "../assets/cereal-flavors/cereal-maple-waffle.png"
+    },
+    {
+      "_id": 8,
+      "image": "../assets/cereal-flavors/cereal-birthday-cake.png"
+    }
+  ]
+}
