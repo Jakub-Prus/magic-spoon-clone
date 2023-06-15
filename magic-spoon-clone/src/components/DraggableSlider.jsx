@@ -12,58 +12,61 @@ const DraggableSlider = () => {
       title: "Fruity",
       image: "src/assets/img/cereal-flavors/cereal-fruity.png",
     },
-    // {
-    //   id: 2,
-    //   title: "Peanut Butter",
-    //   image: "src/assets/img/cereal-flavors/cereal-peanut-butter.png",
-    // },
-    // {
-    //   id: 3,
-    //   title: "Cocoa",
-    //   image: "src/assets/img/cereal-flavors/cereal-cocoa.png",
-    // },
-    // {
-    //   id: 4,
-    //   title: "Cinnamon Roll",
-    //   image: "src/assets/img/cereal-flavors/cereal-cinnamon-roll.png",
-    // },
-    // {
-    //   id: 5,
-    //   title: "Frosted",
-    //   image: "src/assets/img/cereal-flavors/cereal-frosted.png",
-    // },
-    // {
-    //   id: 6,
-    //   title: "Blueberry Muffin",
-    //   image: "src/assets/img/cereal-flavors/cereal-blueberry-muffin.png",
-    // },
-    // {
-    //   id: 7,
-    //   title: "Maple Waffle",
-    //   image: "src/assets/img/cereal-flavors/cereal-maple-waffle.png",
-    // },
-    // {
-    //   id: 8,
-    //   title: "Birthday Cake",
-    //   image: "src/assets/img/cereal-flavors/cereal-birthday-cake.png",
-    // },
+    {
+      id: 2,
+      title: "Peanut Butter",
+      image: "src/assets/img/cereal-flavors/cereal-peanut-butter.png",
+    },
+    {
+      id: 3,
+      title: "Cocoa",
+      image: "src/assets/img/cereal-flavors/cereal-cocoa.png",
+    },
+    {
+      id: 4,
+      title: "Cinnamon Roll",
+      image: "src/assets/img/cereal-flavors/cereal-cinnamon-roll.png",
+    },
+    {
+      id: 5,
+      title: "Frosted",
+      image: "src/assets/img/cereal-flavors/cereal-frosted.png",
+    },
+    {
+      id: 6,
+      title: "Blueberry Muffin",
+      image: "src/assets/img/cereal-flavors/cereal-blueberry-muffin.png",
+    },
+    {
+      id: 7,
+      title: "Maple Waffle",
+      image: "src/assets/img/cereal-flavors/cereal-maple-waffle.png",
+    },
+    {
+      id: 8,
+      title: "Birthday Cake",
+      image: "src/assets/img/cereal-flavors/cereal-birthday-cake.png",
+    },
   ];
   const cerealData = Object.entries(cerealsFlavors);
   console.log(cerealData);
   cerealData.map((item) => console.log(item[1]));
 
   return (
-    <div className="z-20 -mt-4 flex h-48 w-full flex-col items-center justify-center bg-[#dad9ff] text-purple">
-      <h2>FIND YOUR FLAVOR</h2>
-      <div className="flex flex-row">
-        {cerealData.map((item) => (
-          <DraggableGalleryItem
-            key={item[1].id}
-            title={item[1].title}
-            image={item[1].image}
-            linkPath={"/"}
-          />
-        ))}
+    <div className="z-20 -mt-4 flex h-56 w-full flex-col items-center justify-center bg-[#dad9ff] text-purple ">
+      <h2 className="mb-4 text-2xl font-bold">Find Your Flavor</h2>
+      {/* <div className="relative w-full pb-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-20 before:w-6 before:bg-gradient-to-r before:from-purple before:to-transparent before:opacity-40"> */}
+      <div className="w-full overflow-hidden">
+        <div className="scrollbar-hide no-scrollbar mx-auto flex w-full flex-row overflow-x-scroll last:mr-40">
+          {cerealData.map((item) => (
+            <DraggableGalleryItem
+              key={item[1].id}
+              title={item[1].title}
+              image={item[1].image}
+              linkPath={"/"}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
