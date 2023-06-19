@@ -5,14 +5,14 @@ import DraggableSlider from "../../components/DraggableSlider";
 import QuotesCarousel from "../../components/QuotesCarousel";
 import MainFeatures from "../../components/MainFeatures";
 import CallToAction from "../../components/CallToAction";
-import TestimonialsCarousel from "../../components/TestimonialsCarousel";
+import Testimonials from "../../components/Testimonials";
 import Gallery from "../../components/Gallery";
 import LastCallToAction from "../../components/LastCallToAction";
 import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
-    <div className="w-full grow flex flex-col justify-start items-center">
+    <div className="flex w-full grow flex-col items-center justify-start">
       <Promotion amount="50" />
       <Nav />
       <Hero />
@@ -20,7 +20,7 @@ const Home = () => {
       <QuotesCarousel />
       <MainFeatures />
       <CallToAction />
-      <TestimonialsCarousel />
+      <Testimonials />
       <Gallery />
       <LastCallToAction />
       <Footer />

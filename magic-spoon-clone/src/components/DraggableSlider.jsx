@@ -48,9 +48,6 @@ const DraggableSlider = () => {
       image: "src/assets/img/cereal-flavors/cereal-birthday-cake.png",
     },
   ];
-  const cerealData = Object.entries(cerealsFlavors);
-  console.log(cerealData);
-  cerealData.map((item) => console.log(item[1]));
 
   return (
     <div className="z-20 -mt-4 flex h-56 w-full flex-col items-center justify-center bg-[#dad9ff] text-purple ">
@@ -58,11 +55,11 @@ const DraggableSlider = () => {
       {/* <div className="relative w-full pb-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-20 before:w-6 before:bg-gradient-to-r before:from-purple before:to-transparent before:opacity-40"> */}
       <div className="w-full overflow-hidden">
         <div className="scrollbar-hide no-scrollbar mx-auto flex w-full flex-row overflow-x-scroll last:mr-40">
-          {cerealData.map((item) => (
+          {cerealsFlavors.map((item) => (
             <DraggableGalleryItem
-              key={item[1].id}
-              title={item[1].title}
-              image={item[1].image}
+              key={item.id}
+              title={item.title}
+              image={item.image}
               linkPath={"/"}
             />
           ))}

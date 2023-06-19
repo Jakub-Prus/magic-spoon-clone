@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         purple: "#3f0791",
+        lightblue: "#bfefff",
       },
       keyframes: {
         animatedgradient: {
@@ -21,7 +22,7 @@ export default {
       },
       animation: {
         "gradient-banner":
-          "animatedgradient 7s linear 0s infinite alternate both running",
+          "animatedgradient 7s linear infinite alternate both running",
       },
     },
   },

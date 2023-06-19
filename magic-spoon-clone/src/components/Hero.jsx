@@ -7,7 +7,7 @@ const Hero = () => {
         <h2>High protein</h2>
         <h2>cereal to power</h2>
         <h2>your days.</h2>
-        <Button text={"TRY NOW"} />
+        <Button text={"TRY NOW"} sizeX={"8"} sizeY={"4"} />
       </div>
     </section>
   );

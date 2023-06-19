@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="w-screen h-screen min-h-screen grow flex flex-col justify-start items-center font-maven font-medium">
+    <div className="flex h-screen min-h-screen w-screen grow flex-col items-center justify-start overflow-x-hidden font-maven font-medium">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
