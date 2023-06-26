@@ -50,7 +50,7 @@ const DraggableSlider = () => {
   ];
 
   return (
-    <div className="z-20 -mt-4 flex h-56 w-full flex-col items-center justify-center bg-[#dad9ff] text-purple ">
+    <div className="-mt-4 flex h-56 w-full flex-col items-center justify-center bg-[#dad9ff] text-purple ">
       <h2 className="mb-4 text-2xl font-bold">Find Your Flavor</h2>
       {/* <div className="relative w-full pb-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-20 before:w-6 before:bg-gradient-to-r before:from-purple before:to-transparent before:opacity-40"> */}
       <div className="w-full overflow-hidden">

@@ -19,10 +19,20 @@ export default {
             background: "#5B00ED",
           },
         },
+        "open-menu": {
+          "0%": { transform: "scaleY(0)" },
+          "80%": { transform: "scaleY(1.2)" },
+          "100%": { transform: "scaleY(1)" },
+        },
+        rotate: {
+          "0%": { transform: "rotate(0)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
       },
       animation: {
-        "gradient-banner":
-          "animatedgradient 7s linear infinite alternate both running",
+        "gradient-banner": "animatedgradient 7s linear infinite alternate both running",
+        "open-menu": "open-menu 0.5s ease-in-out forwards",
+        "spin-slow": "rotate 6s linear infinite",
       },
     },
   },

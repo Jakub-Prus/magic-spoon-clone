@@ -15,4 +15,16 @@
       scrollbar-width: none; /* Firefox */
     }
   }
+  .section-min-height {
+      min-height: calc(100vh - 5.5rem);
+  }
+
+  .toggle-btn {
+      @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
+  }
+
+  .text-outlined {
+    -webkit-text-stroke-color: #3f0791;
+    -webkit-text-stroke-width: 1px;
+  }
 }

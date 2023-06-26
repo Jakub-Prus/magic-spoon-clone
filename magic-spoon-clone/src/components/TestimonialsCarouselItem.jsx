@@ -9,8 +9,8 @@ const TestimonialsCarouselItem = ({
       <p className="pb-8 text-center text-xl text-purple">{text}</p>
       <h4
         style={{
-          "text-stroke": "1px #3f0791",
-          "-webkit-text-stroke": "1px #3f0791",
+          textStroke: "1px #3f0791",
+          WebkitTextStroke: "1px #3f0791",
         }}
         className="text-2xl text-white"
       >

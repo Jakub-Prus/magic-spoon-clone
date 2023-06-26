@@ -1,17 +1,17 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Nav = () => {
   const iconSize = "2rem";
   return (
-    <nav className="w-full max-h-24 -mb-24 flex flx-row justify-between items-center grow p-4 text-4xl  z-10">
-      <MenuIcon style={{ fontSize: "2.5rem" }} />
-      <div className="flex flex-col grow ml-8 items-center font-bold text-purple">
+    <nav className="z-20 -mb-24 flex max-h-24 w-full grow flex-row items-center justify-between p-4  text-4xl">
+      <HamburgerMenu />
+      <div className="z-30 ml-8 flex grow flex-col items-center font-bold text-purple">
         <h1>MAGIC</h1>
         <h1>SPOON</h1>
       </div>
-      <div className="text-purple min-w-[76px] flex justify-between">
+      <div className="z-30 flex min-w-[76px] justify-between text-purple">
         <PersonIcon style={{ fontSize: iconSize }} />
         <ShoppingBasketIcon style={{ fontSize: iconSize }} />
       </div>
