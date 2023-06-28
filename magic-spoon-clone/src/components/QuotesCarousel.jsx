@@ -26,23 +26,23 @@ const QuotesCarousel = () => {
 
   const renderCenterLeftControls = ({ previousDisabled, previousSlide }) => (
     <button
-      className="m-3 ml-8 flex cursor-pointer appearance-none items-center border-none bg-transparent text-purple opacity-70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-30"
+      className="m-3 ml-5 flex cursor-pointer appearance-none items-center border-none bg-transparent text-purple opacity-70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-30"
       disabled={previousDisabled}
       onClick={previousSlide}
       aria-label="Go to previous slide"
     >
-      <NavigateBeforeIcon size={32} />
+      <NavigateBeforeIcon style={{ fontSize: "34px" }} />
     </button>
   );
 
   const renderCenterRightControls = ({ nextDisabled, nextSlide }) => (
     <button
-      className="m-3 mr-8 flex cursor-pointer appearance-none items-center border-none bg-transparent text-purple opacity-70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-30"
+      className="m-3 mr-5 flex cursor-pointer appearance-none items-center border-none bg-transparent text-purple opacity-70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-30"
       disabled={nextDisabled}
       onClick={nextSlide}
       aria-label="Go to previous slide"
     >
-      <NavigateNextIcon size={32} />
+      <NavigateNextIcon style={{ fontSize: "34px" }} />
     </button>
   );
 
@@ -52,8 +52,8 @@ const QuotesCarousel = () => {
         <button
           key={index}
           className={`${
-            currentSlide === index ? "bg-purple opacity-100 " : ""
-          } mr-4 mt-20 h-4 w-4 rounded-full border-0 bg-purple p-0 text-xs text-purple opacity-50 `}
+            currentSlide === index ? "!bg-purple " : ""
+          } mr-4 mt-20 h-4 w-4 rounded-full border-0 bg-[#3f079199] p-0 text-xs text-transparent`}
           onClick={() => goToSlide(index)}
         >
           {index + 1}

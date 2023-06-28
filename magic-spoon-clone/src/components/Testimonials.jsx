@@ -2,7 +2,7 @@ import TestimonialsCarousel from "./TestimonialsCarousel";
 
 const Testimonials = () => {
   return (
-    <div className="flex w-full flex-col items-center bg-gradient-to-b from-[#5B01ED] via-[#5B01ED] to-[#C8EEFD] pb-36">
+    <div className="flex w-full flex-col items-center bg-gradient-to-b from-[#FFCD66EC] via-[#5B01ED] to-[#C8EEFD] pb-36">
       <TestimonialsCarousel />
       <h2 className="w-64 text-center text-3xl text-white">
         Why did we grow up, but our cereal didn`t?
