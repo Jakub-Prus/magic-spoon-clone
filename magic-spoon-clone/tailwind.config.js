@@ -33,6 +33,7 @@ export default {
         "gradient-banner": "animatedgradient 7s linear infinite alternate both running",
         "open-menu": "open-menu 0.5s ease-in-out forwards",
         "spin-slow": "rotate 6s linear infinite",
+        "spin-super-slow": "rotate 18s linear infinite",
       },
     },
   },

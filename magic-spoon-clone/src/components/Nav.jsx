@@ -13,12 +13,12 @@ const Nav = () => {
     {
       id: 0,
       title: "ABOUT US",
-      linkPath: "",
+      linkPath: "/us-vs-them",
     },
     {
       id: 1,
       title: "US VS THEM",
-      linkPath: "",
+      linkPath: "/us-vs-them",
     },
     {
       id: 2,

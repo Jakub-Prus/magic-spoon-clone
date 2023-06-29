@@ -64,7 +64,7 @@ const QuotesCarousel = () => {
 
   return (
     <section className="flex h-96 w-full flex-row items-center justify-center bg-lightblue">
-      <div className="w-full">
+      <div className="w-full md:hidden">
         <Carousel
           wrapAround={true}
           slidesToShow={1}
@@ -81,24 +81,11 @@ const QuotesCarousel = () => {
           ))}
         </Carousel>
       </div>
-      {/* <NavigateBeforeIcon
-        style={{ fontSize: "2.2rem" }}
-        className="text-purple"
-        onClick={previousSlide}
-      /> */}
-      {/* <div className="flex flex-row overflow-x-auto">
-        {quotesData.map(
-          (item) =>
-            selectedSlide.toString() === item.id && (
-              <QuoteCarouselItem key={item.id} quote={item.quote} image={item.image} />
-            )
-        )}
+      <div className="hidden w-full md:flex md:flex-row md:items-center md:justify-center">
+        {quotesData.map((item) => (
+          <QuoteCarouselItem key={item.id} quote={item.quote} image={item.image} />
+        ))}
       </div>
-      <NavigateNextIcon
-        style={{ fontSize: "2.2rem" }}
-        className="text-purple"
-        onClick={nextSlide}
-      /> */}
     </section>
   );
 };

@@ -1,31 +1,7 @@
 import TestimonialsCarouselItem from "./TestimonialsCarouselItem";
 import Carousel from "nuka-carousel";
 
-const TestimonialsCarousel = () => {
-  const testimonialsData = [
-    {
-      id: "0",
-      text: "I just ate delicious cereal for dinner and the last time I did that was my sophomore year in college!",
-      personName: "KELLY LEVEQUE",
-      personAbout: "Holistic Nutritionist, Wellness Expert, and Celebrity Health Coach",
-      avatarPath: "src/assets/img/testimonials/testimonials1.png",
-    },
-    {
-      id: "1",
-      text: "When they said ‘Breakfast of Champions’, they meant Magic Spoon.",
-      personName: "Priscilla Frederick-Loomis",
-      personAbout: "Holistic Nutritionist, Wellness Expert, and Celebrity Health Coach",
-      avatarPath: "src/assets/img/testimonials/testimonials2.jpg",
-    },
-    {
-      id: "2",
-      text: "Magic Spoon is my adult life and kid life smashed into one fantastic box of cereal.",
-      personName: "Natalie Duran",
-      personAbout: "Rock Climber, Ninja Warrior, Neuroscientist, Producer",
-      avatarPath: "src/assets/img/testimonials/testimonials3.jpg",
-    },
-  ];
-
+const TestimonialsCarousel = ({ testimonialsData }) => {
   const renderCenterLeftControls = ({ previousDisabled, previousSlide }) => (
     <button
       className="m-3 ml-5 flex cursor-pointer appearance-none items-center border-none bg-transparent text-purple opacity-70 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-30"
@@ -61,7 +37,7 @@ const TestimonialsCarousel = () => {
   );
 
   return (
-    <div className="flex w-[90%] flex-col items-center">
+    <div className="flex w-[90%] flex-col items-center md:hidden">
       <div className="mt-2 w-full">
         <Carousel
           wrapAround={true}

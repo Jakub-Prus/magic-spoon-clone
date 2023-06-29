@@ -11,7 +11,7 @@ const DropDownMenu = ({ data }) => {
     <div
       className={`${
         isMenuOpen ? "bg-white " : " "
-      }relative hidden h-32 w-40 self-start font-bold text-purple duration-300 md:block`}
+      }relative hidden h-32 w-40 self-start font-bold text-purple duration-300 sm:block`}
       onMouseEnter={toggleMenu}
       onMouseLeave={toggleMenu}
     >

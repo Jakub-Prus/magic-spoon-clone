@@ -13,7 +13,7 @@ const MobileNav = ({ menuOpen }) => {
         className="section-min-height z-10 mt-20 flex flex-col items-center pt-8 text-transparent"
         aria-label="mobile"
       >
-        <MobileMenuNav text="US VS. THEM" linkPath="/" />
+        <MobileMenuNav text="US VS. THEM" linkPath="/us-vs-them" />
         <MobileMenuNav text="OUR STORY" linkPath="/" />
         <MobileMenuNav text="BUNDLES" linkPath="/" />
         <MobileMenuNav text="CEREAL" linkPath="/" />
