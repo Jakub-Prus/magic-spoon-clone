@@ -8,8 +8,8 @@ const LastCallToAction = () => {
           Happiness{" "}
           <span
             style={{
-              textStroke: "2px #ffffff",
-              WebkitTextStroke: "2px #ffffff",
+              textStroke: "1px #ffffff",
+              WebkitTextStroke: "1px #ffffff",
             }}
             className="text-transparent"
           >
