@@ -4,6 +4,8 @@ import Nav from "./components/Nav";
 import Promotion from "./components/Promotion";
 import Footer from "./components/Footer";
 import About from "./pages/About/About";
+import OurStory from "./pages/OurStory/OurStory";
+import ShopCereal from "./pages/Store/ShopCereal";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/us-vs-them" element={<About />} />
+        <Route path="/our-story" element={<OurStory />} />
+        <Route path="/shop" element={<ShopCereal />} />
       </Routes>
       <Footer />
     </div>

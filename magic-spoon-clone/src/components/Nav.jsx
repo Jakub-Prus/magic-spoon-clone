@@ -4,6 +4,7 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import HamburgerMenu from "./HamburgerMenu";
 import ShoppingCart from "./ShoppingCart";
 import DropDownMenu from "./DropDownMenu";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
@@ -23,7 +24,7 @@ const Nav = () => {
     {
       id: 2,
       title: "OUR STORY",
-      linkPath: "",
+      linkPath: "/our-story",
     },
   ];
 
@@ -31,7 +32,7 @@ const Nav = () => {
     {
       id: 0,
       title: "SHOP NOW",
-      linkPath: "",
+      linkPath: "/shop",
     },
     {
       id: 1,
@@ -41,7 +42,7 @@ const Nav = () => {
     {
       id: 2,
       title: "CEREAL",
-      linkPath: "",
+      linkPath: "/shop",
     },
   ];
 
@@ -57,8 +58,10 @@ const Nav = () => {
         className="z-30 flex w-32 flex-col justify-between font-bold text-purple sm:w-64 sm:items-center"
         style={{ lineHeight: "1.7rem" }}
       >
-        <h1>MAGIC</h1>
-        <h1>SPOON</h1>
+        <Link to="/">
+          <h1>MAGIC</h1>
+          <h1>SPOON</h1>
+        </Link>
       </div>
       <div className="z-30 flex min-w-[76px] justify-between self-start text-purple">
         <DropDownMenu data={dropDownMenuRight} />
