@@ -27,4 +27,8 @@
     -webkit-text-stroke-color: #3f0791;
     -webkit-text-stroke-width: 1px;
   }
+  .text-outlined2 {
+    -webkit-text-stroke-color: #3f0791;
+    -webkit-text-stroke-width: 2px;
+  }
 }
