@@ -8,8 +8,8 @@ const ShopProductReview = () => {
 
   return (
     <div className="flex w-full flex-col items-center bg-gradient-to-b from-[#FFEC6B] to-[#BFEFFF] py-8 text-purple">
-      <h2 className="text-outlined1-5 w-4/5 text-center text-5xl text-transparent">
-        WHAT SPOONERS ARE SAYING
+      <h2 className="text-outlined1-5 flex w-full flex-col text-center text-5xl text-transparent md:w-1/4 md:text-6xl">
+        <span>WHAT</span> <span>SPOONERS</span> <span>ARE SAYING</span>
       </h2>
       <div className="mb-8 mt-10 flex w-3/5 flex-col items-center text-center">
         <h4 className="text-4xl">{productRating}</h4>

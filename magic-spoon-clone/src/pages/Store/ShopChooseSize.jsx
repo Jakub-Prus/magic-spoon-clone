@@ -8,7 +8,7 @@ const ShopChooseSize = ({
 }) => {
   return (
     <div
-      className="relative flex w-full rounded-full border-2 border-purple"
+      className="relative flex w-full rounded-full border-2 border-purple lg:w-4/6"
       style={{ marginTop: my, marginBottom: my, height: height }}
     >
       <button

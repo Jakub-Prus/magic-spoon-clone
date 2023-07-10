@@ -35,4 +35,8 @@
     -webkit-text-stroke-color: #3f0791;
     -webkit-text-stroke-width: 2px;
   }
+  .text-xxs {
+      font-size: 0.75rem; /* 8px */
+      line-height: 0.75rem /* 12px */
+  }
 }

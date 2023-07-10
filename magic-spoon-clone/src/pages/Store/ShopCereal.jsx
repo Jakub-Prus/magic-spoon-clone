@@ -99,18 +99,23 @@ const ShopCereal = () => {
   return (
     <section className="w-full">
       <div className="flex w-full flex-col items-center justify-center bg-[#dad9ff] pt-36">
-        <div className="flex w-[90%] flex-col items-center justify-center">
+        <div className="flex w-[90%] flex-col items-center justify-center lg:flex-row lg:items-start lg:gap-x-4">
           <ShopItemDetails
             title={selectedItem.title}
             description={selectedItem.description}
             reviews={selectedItem.reviews}
           />
-          <ShopProductOptions
-            data={shopData}
-            chosenProduct={chosenProduct}
-            setChosenProduct={setChosenProduct}
-          />
-          <ShopSizeSubscription chosenSize={chosenSize} setChosenSize={setChosenSize} />
+          <div
+            className="w-full lg:bg-[#e5e4ff] lg:p-8"
+            style={{ borderRadius: "2.5rem" }}
+          >
+            <ShopProductOptions
+              data={shopData}
+              chosenProduct={chosenProduct}
+              setChosenProduct={setChosenProduct}
+            />
+            <ShopSizeSubscription chosenSize={chosenSize} setChosenSize={setChosenSize} />
+          </div>
         </div>
         <ShopFeatures />
         <ShopIngredients />

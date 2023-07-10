@@ -80,7 +80,7 @@ const ShopSizeSubscription = ({ chosenSize, setChosenSize }) => {
         my={"0.5rem"}
       />
 
-      <div className="mb-24">
+      <div className="mb-24 lg:mb-4">
         <ShopBenefits toggledSubscription={toggledSubscription} />
         <p className="ml-8 mt-4 text-xs font-normal">*See terms of use</p>
       </div>
