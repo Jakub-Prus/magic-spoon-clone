@@ -11,7 +11,7 @@ const ShopProductReview = () => {
       <h2 className="text-outlined1-5 w-4/5 text-center text-5xl text-transparent">
         WHAT SPOONERS ARE SAYING
       </h2>
-      <div className="mt-10 flex w-3/5 flex-col items-center text-center">
+      <div className="mb-8 mt-10 flex w-3/5 flex-col items-center text-center">
         <h4 className="text-4xl">{productRating}</h4>
         <ShopRatingStars rating={productRating} />
         <div className="font-bold">Based on {numberReviews} reviews</div>
