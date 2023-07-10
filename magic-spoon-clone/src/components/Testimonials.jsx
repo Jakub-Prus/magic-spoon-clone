@@ -13,7 +13,7 @@ const Testimonials = () => {
     },
     {
       id: "1",
-      text: '"When they said ‘Breakfast of Champions’, they meant Magic Spoon."',
+      text: '"When they said `Breakfast of Champions`, they meant Magic Spoon."',
       personName: "Priscilla Frederick-Loomis",
       personAbout: "Holistic Nutritionist, Wellness Expert, and Celebrity Health Coach",
       avatarPath: "src/assets/img/testimonials/testimonials2.jpg",
