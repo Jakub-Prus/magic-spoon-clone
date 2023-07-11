@@ -1,4 +1,4 @@
-import testimonialsData from "../data/quotesData";
+import { testimonialsData } from "../data/testimonialsData";
 import TestimonialsCarousel from "./TestimonialsCarousel";
 import TestimonialsCarouselItem from "./TestimonialsCarouselItem";
 import gifFromSide from "../assets/img/magic-spoon-home-pb2.webp";
