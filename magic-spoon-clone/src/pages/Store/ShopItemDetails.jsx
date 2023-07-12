@@ -1,13 +1,11 @@
 import ShopItemHeading from "./ShopItemHeading";
 import ShopDetailedImages from "./ShopDetailedImages";
-import { shopData } from "../../data/shopData";
 import { useSelector } from "react-redux";
 import { selectChosenItem } from "../../redux/shopSlice";
 
 const ShopItemDetails = () => {
   const absoluteMainImgPath = "src/assets/img/store/main-img/";
-  const chosenProduct = useSelector(selectChosenItem);
-  const selectedItem = shopData.find((item) => item.id === chosenProduct);
+  const selectedItem = useSelector(selectChosenItem);
   return (
     <div className="mb-2 flex w-full flex-col items-center justify-center text-purple">
       <ShopItemHeading title={selectedItem.title} reviews={selectedItem.reviews} />

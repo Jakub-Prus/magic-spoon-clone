@@ -1,13 +1,14 @@
-import { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import HamburgerMenu from "./HamburgerMenu";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from "./ShoppingCartSliding";
 import DropDownMenu from "./DropDownMenu";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateShoppingCartOpen } from "../redux/shoppingCartSlice";
 
 const Nav = () => {
-  const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
+  const dispatch = useDispatch();
   const iconSize = "2rem";
 
   const dropDownMenuLeft = [
@@ -46,10 +47,6 @@ const Nav = () => {
     },
   ];
 
-  const handleShoppingCartClick = () => {
-    setShoppingCartOpen(!shoppingCartOpen);
-  };
-
   return (
     <nav className="z-40 -mb-24 flex max-h-24 w-[90%] flex-row items-center justify-between p-4 text-4xl sm:ml-16 md:justify-center">
       <HamburgerMenu />
@@ -69,12 +66,9 @@ const Nav = () => {
           <PersonIcon style={{ fontSize: iconSize }} />
           <ShoppingBasketIcon
             style={{ fontSize: iconSize }}
-            onClick={handleShoppingCartClick}
+            onClick={() => dispatch(updateShoppingCartOpen())}
           />
-          <ShoppingCart
-            shoppingCartOpen={shoppingCartOpen}
-            setShoppingCartOpen={setShoppingCartOpen}
-          />
+          <ShoppingCart />
         </div>
       </div>
     </nav>

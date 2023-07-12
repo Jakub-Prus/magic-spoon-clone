@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { selectShoppingCartOpen } from "../../redux/shoppingCartSlice";
 import ShopChooseSize from "./ShopChooseSize";
 import ShopSubscription from "./ShopSubscription";
 import ShopAddToCartButton from "./ShopAddToCartButton";
@@ -11,8 +13,13 @@ const ShopMobileStickyBuyMenu = ({
   toggledSubscription,
   handleToggleSubscription,
 }) => {
+  const shoppingCartOpen = useSelector(selectShoppingCartOpen);
   return (
-    <div className="absolute bottom-0 z-40 flex w-full items-center justify-center bg-white pt-1 lg:hidden">
+    <div
+      className={`${
+        shoppingCartOpen ? "opacity-0 " : "opacity-100 "
+      }absolute bottom-0 z-40 flex w-full items-center justify-center bg-white pt-1 transition-opacity lg:hidden`}
+    >
       <div className="flex w-[90%] flex-col items-center justify-center">
         <ShopSubscription
           toggledSubscription={toggledSubscription}

@@ -1,10 +1,17 @@
 import { useState } from "react";
+import { shopData } from "../../data/shopData";
+import { useSelector, useDispatch } from "react-redux";
+import { selectChosenItemName, updateShopSelectedItem } from "../../redux/shopSlice";
 
-const ShopProductOptions = ({ data, chosenProduct, setChosenProduct }) => {
+const ShopProductOptions = () => {
+  const dispatch = useDispatch();
+  const chosenProductName = useSelector(selectChosenItemName);
+
   const [isHovering, setIsHovering] = useState(false);
   const [currentHoverElementText, setCurrentHoverElementText] = useState("");
+
   const handleButtonClick = (id) => {
-    setChosenProduct(id);
+    dispatch(updateShopSelectedItem(id));
   };
   const handleMouseOver = (event) => {
     setCurrentHoverElementText(event.target.innerText);
@@ -19,25 +26,27 @@ const ShopProductOptions = ({ data, chosenProduct, setChosenProduct }) => {
       <h2 className="mb-4 text-lg uppercase">1. Choose your flavor</h2>
       <div className="block w-full lg:hidden">
         <button
-          key={data[0].id}
+          key={shopData[0].id}
           className="flex h-10 w-full items-center justify-center rounded-full bg-white"
-          onClick={() => handleButtonClick(data[0].id)}
+          onClick={() => handleButtonClick(shopData[0].id)}
           style={
-            data[0].id === chosenProduct
-              ? { backgroundColor: data[0].color, color: "#ffffff" }
+            shopData[0].id === chosenProductName
+              ? { backgroundColor: shopData[0].color, color: "#ffffff" }
               : null
           }
         >
-          {data[0].title}
+          {shopData[0].title}
         </button>
         <div className="mt-2 grid w-full grid-cols-2 grid-rows-6 gap-2">
-          {data.slice(1).map((item) => {
+          {shopData.slice(1).map((item) => {
             return (
               <button
                 key={item.id}
                 className={`flex h-10 w-full items-center justify-center rounded-full bg-white hover:bg-[${item.color}]`}
                 onClick={() => handleButtonClick(item.id)}
-                style={item.id === chosenProduct ? { backgroundColor: item.color } : null}
+                style={
+                  item.id === chosenProductName ? { backgroundColor: item.color } : null
+                }
               >
                 {item.title}
               </button>
@@ -47,14 +56,14 @@ const ShopProductOptions = ({ data, chosenProduct, setChosenProduct }) => {
       </div>
       <div className="mb-8 hidden w-full lg:block">
         <div className="mt-2 grid w-full grid-cols-3 grid-rows-4 gap-2">
-          {data.map((item) => {
+          {shopData.map((item) => {
             return (
               <button
                 key={item.id}
                 className={`flex h-10 w-full items-center justify-center rounded-full bg-white hover:bg-[${item.color}]"} transition-colors`}
                 onClick={() => handleButtonClick(item.id)}
                 style={
-                  item.id === chosenProduct ||
+                  item.id === chosenProductName ||
                   (item.id === currentHoverElementText && isHovering === true)
                     ? item.id === "VARIETY"
                       ? { backgroundColor: item.color, color: "#ffffff" }

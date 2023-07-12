@@ -1,10 +1,10 @@
 const ShopChooseSize = ({
   chosenSize,
   handleSizeButtonClick,
-  my,
-  height,
-  myButtons,
-  mxButtons,
+  my = "0.5rem",
+  height = "3.5rem",
+  myButtons = "0rem",
+  mxButtons = "0rem",
 }) => {
   return (
     <div

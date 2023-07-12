@@ -1,12 +1,15 @@
 import { useState } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { selectChosenSize, updateChosenSize } from "../../redux/shopSlice";
 import ShopBenefits from "./ShopBenefits";
 import ShopChooseSize from "./ShopChooseSize";
 import ShopSubscription from "./ShopSubscription";
 import ShopAddToCartButton from "./ShopAddToCartButton";
 import ShopMobileStickyBuyMenu from "./ShopMobileStickyBuyMenu";
 
-const ShopSizeSubscription = ({ chosenSize, setChosenSize }) => {
+const ShopSizeSubscription = () => {
   const [toggledSubscription, setToggledSubscription] = useState(false);
+  const [chosenSize, setChosenSize] = useState(4);
   const [price, setPrice] = useState(39);
   const [discountedPrice, setDiscountedPrice] = useState("");
   const [toggledDiscountedPrice, setToggledDiscountedPrice] = useState(false);
