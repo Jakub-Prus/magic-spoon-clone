@@ -15,6 +15,8 @@ export const shopSlice = createSlice({
     chosenItemName: "VARIETY",
     chosenSize: 4,
     subscription: false,
+    price: 3900,
+    discountedPrice: 0,
   },
   reducers: {
     updateChosenItem: (state, action) => {
@@ -26,8 +28,14 @@ export const shopSlice = createSlice({
     updateChosenSize: (state, action) => {
       state.chosenSize = action.payload;
     },
-    updateSubscription: (state) => {
+    toggleSubscription: (state) => {
       state.subscription = !state.subscription;
+    },
+    updatePrice: (state, action) => {
+      state.price = action.payload;
+    },
+    updateDiscountedPrice: (state, action) => {
+      state.discountedPrice = action.payload;
     },
   },
 });
@@ -36,7 +44,9 @@ export const {
   updateChosenItem,
   updateChosenItemName,
   updateChosenSize,
-  updateSubscription,
+  toggleSubscription,
+  updatePrice,
+  updateDiscountedPrice,
 } = shopSlice.actions;
 
 export const updateShopSelectedItem = (itemName) => (dispatch) => {
@@ -47,9 +57,21 @@ export const updateShopSelectedItem = (itemName) => (dispatch) => {
   }
 };
 
+export const calculateActualShopPrice = (subscription, packageSize) => (dispatch) => {
+  const price = packageSize === 4 ? 3900 : 5900;
+  const discountedPrice =
+    subscription === true ? price * 0.75 : packageSize === 6 ? price - 500 : 0;
+  // console.log("subscription: ", subscription, "packageSize: ", packageSize); // For debug
+  // console.log("price: ", price, "discountedPrice: ", discountedPrice); // For debug
+  dispatch(updatePrice(price));
+  dispatch(updateDiscountedPrice(discountedPrice));
+};
+
 export const selectChosenItem = (state) => state.shop.chosenItem;
 export const selectChosenItemName = (state) => state.shop.chosenItemName;
 export const selectChosenSize = (state) => state.shop.chosenSize;
 export const selectSubscription = (state) => state.shop.subscription;
+export const selectPrice = (state) => state.shop.price;
+export const selectDiscountedPrice = (state) => state.shop.discountedPrice;
 
 export default shopSlice.reducer;

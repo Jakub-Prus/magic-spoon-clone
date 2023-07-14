@@ -1,9 +1,14 @@
-const ShopSubscription = ({ toggledSubscription, handleToggleSubscription }) => {
+import { useSelector, useDispatch } from "react-redux";
+import { selectSubscription, toggleSubscription } from "../../redux/shopSlice";
+const ShopSubscription = () => {
+  const dispatch = useDispatch();
+  const subscription = useSelector(selectSubscription);
+
   return (
     <div className="my-2 flex h-6 w-full justify-center">
       <div
         className={`flex items-center justify-center rounded-full border-2 border-purple ${
-          toggledSubscription ? "bg-purple" : ""
+          subscription ? "bg-purple" : ""
         }`}
       >
         <label
@@ -14,19 +19,19 @@ const ShopSubscription = ({ toggledSubscription, handleToggleSubscription }) => 
             type="checkbox"
             id="toggle"
             className="sr-only "
-            checked={toggledSubscription}
-            onChange={handleToggleSubscription}
+            checked={subscription}
+            onChange={() => dispatch(toggleSubscription())}
           />
           <span
             className={`absolute left-0 ml-1 h-4 w-4 rounded-full bg-purple transition-transform duration-300 ease-in-out ${
-              toggledSubscription ? "translate-x-full transform bg-white" : ""
+              subscription ? "translate-x-full transform bg-white" : ""
             }`}
           ></span>
         </label>
       </div>
       <h3
         className="ml-2 flex items-center justify-center text-center text-base font-normal uppercase underline"
-        onClick={handleToggleSubscription}
+        onClick={() => dispatch(toggleSubscription())}
       >
         SUBSCRIBE & SAVE(25%)
       </h3>
