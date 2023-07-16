@@ -1,12 +1,17 @@
 import { useDispatch } from "react-redux";
 import {
   deleteItemInShoppingCart,
-  incrementAmountOfItemInShoppingCart,
-  decrementAmountOfItemInShoppingCart,
+  updateAmountOfItemInShoppingCart,
 } from "../redux/shoppingCartSlice";
 import ClearIcon from "@mui/icons-material/Clear";
 
-const ShoppingCartElement = ({ productName, productId, price, size, amount }) => {
+const ShoppingCartElement = ({
+  productName,
+  shoppingCartItemId,
+  price,
+  size,
+  amount,
+}) => {
   const dispatch = useDispatch();
   const absoluteMainImgPath = "src/assets/img/store/main-img/";
 
@@ -31,14 +36,30 @@ const ShoppingCartElement = ({ productName, productId, price, size, amount }) =>
           <div className="flex flex-row rounded-full border-2 border-purple ">
             <button
               className="mr-2 px-2 text-base"
-              onClick={() => dispatch(decrementAmountOfItemInShoppingCart(productId))}
+              onClick={() =>
+                dispatch(
+                  updateAmountOfItemInShoppingCart(
+                    shoppingCartItemId,
+                    amount - 1,
+                    "decrement"
+                  )
+                )
+              }
             >
               -
             </button>
             <span className="text-sm leading-6">{amount}</span>
             <button
               className="ml-2 px-2 text-base"
-              onClick={() => dispatch(incrementAmountOfItemInShoppingCart(productId))}
+              onClick={() =>
+                dispatch(
+                  updateAmountOfItemInShoppingCart(
+                    shoppingCartItemId,
+                    amount + 1,
+                    "increment"
+                  )
+                )
+              }
             >
               +
             </button>

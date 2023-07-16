@@ -3,7 +3,10 @@ import {
   selectShoppingCartOpen,
   updateShoppingCartOpen,
   selectItemsInShoppingCart,
+  selectTotalPriceInShoppingCart,
+  updateShoppingCartTotalPrice,
 } from "../redux/shoppingCartSlice";
+import { useEffect } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ShoppingCartElement from "./ShoppingCartElement";
 import { Link } from "react-router-dom";
@@ -12,14 +15,17 @@ const ShoppingCart = () => {
   const dispatch = useDispatch();
   const shoppingCartOpen = useSelector(selectShoppingCartOpen);
   const shoppingCartItems = useSelector(selectItemsInShoppingCart);
-  console.log(shoppingCartItems);
-  console.log(shoppingCartItems.length);
+  const shoppingCartTotalPrice = useSelector(selectTotalPriceInShoppingCart);
+
+  useEffect(() => {
+    dispatch(updateShoppingCartTotalPrice());
+  });
 
   return (
     <div
       className={`${
-        shoppingCartOpen ? "opacity-100 " : "opacity-0 "
-      }text-purple pointer-events-none absolute left-0 top-0 z-50 h-screen w-screen bg-[#6e64c8bf] transition-opacity duration-300 ease-in-out`}
+        shoppingCartOpen ? "visible opacity-100" : "invisible opacity-0 "
+      }text-purple pointer-events-none absolute left-0 top-0 z-50 h-screen w-screen overflow-hidden bg-[#6e64c8bf] transition-opacity duration-300 ease-in-out`}
     >
       <div
         className={`${
@@ -53,9 +59,9 @@ const ShoppingCart = () => {
           ) : (
             shoppingCartItems.map((item) => (
               <ShoppingCartElement
-                key={item.id}
+                key={item.shoppingCartItemId}
                 productName={item.title}
-                productId={item.id}
+                shoppingCartItemId={item.shoppingCartItemId}
                 price={item.price}
                 size={item.size}
                 amount={item.amount}
@@ -66,12 +72,12 @@ const ShoppingCart = () => {
 
         <div className="absolute bottom-0 left-0 z-40 mb-8 flex w-full items-center justify-center bg-white pt-1">
           <div className="flex w-[90%] flex-col items-center justify-center">
-            <div className="flex justify-between">
-              <div>SUBTOTAL()</div>
-              <div></div>
+            <div className=" flex w-[90%] flex-row justify-between text-base font-semibold">
+              <span>SUBTOTAL({shoppingCartItems.length} ITEMS)</span>
+              <span>{"$" + (shoppingCartTotalPrice / 100).toFixed(2)}</span>
             </div>
             <button
-              className="flex w-full items-center justify-center rounded-full bg-purple uppercase text-white lg:w-4/5"
+              className="flex w-full items-center justify-center rounded-full bg-purple font-bold uppercase text-white lg:w-4/5"
               style={{
                 height: "3rem",
                 fontSize: "1rem",
@@ -80,12 +86,7 @@ const ShoppingCart = () => {
               }}
               // onClick={() => dispatch(addItemToShoppingCart(newShoppingCartItem))}
             >
-              ADD TO CART <span className={"mx-2 line-through opacity-30"}>${0}</span>
-              <span
-              //
-              >
-                ${10 / 100}
-              </span>
+              CHECKOUT{" "}
             </button>
           </div>
         </div>

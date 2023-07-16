@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToShoppingCart } from "../../redux/shoppingCartSlice";
+import {
+  addItemToShoppingCart,
+  updateShoppingCartOpen,
+} from "../../redux/shoppingCartSlice";
 import {
   selectChosenItem,
   selectChosenSize,
@@ -18,32 +21,43 @@ const ShopAddToCartButton = ({ height, fontSize, my }) => {
   const selectedShopItem = useSelector(selectChosenItem);
   const size = useSelector(selectChosenSize);
   const amount = 1;
-  const price =
-    shopItemPrice < shopItemDiscountedPrice ? shopItemPrice : shopItemDiscountedPrice;
+  const shoppingCartItemId = selectedShopItem.id + size;
+  let price;
+  if (shopItemDiscountedPrice === 0) price = shopItemPrice;
+  else price = Math.min(shopItemPrice, shopItemDiscountedPrice);
+  console.log("selectedShopItem: ", selectedShopItem);
+  console.log("shopItemPrice: ", shopItemPrice);
+  console.log("shopItemDiscountedPrice: ", shopItemDiscountedPrice);
   const newShoppingCartItem = {
     ...selectedShopItem,
-    price,
-    size,
-    amount,
+    shoppingCartItemId: shoppingCartItemId,
+    originalPrice: price,
+    price: price,
+    size: size,
+    amount: amount,
   };
+  console.log("newShoppingCartItem: ", newShoppingCartItem);
 
   useEffect(() => {
     dispatch(calculateActualShopPrice(toggledSubscription, size));
   });
 
-  console.log(
-    "AddtoCartButton-",
-    "shopItemPrice:",
-    shopItemPrice,
-    "shopItemDiscountedPrice: ",
-    shopItemDiscountedPrice
-  ); // For Debug
+  // console.log(
+  //   "AddtoCartButton-",
+  //   "shopItemPrice:",
+  //   shopItemPrice,
+  //   "shopItemDiscountedPrice: ",
+  //   shopItemDiscountedPrice
+  // ); // For Debug
 
   return (
     <button
       className="flex w-full items-center justify-center rounded-full bg-purple uppercase text-white lg:w-4/5"
       style={{ height: height, fontSize: fontSize, marginTop: my, marginBottom: my }}
-      onClick={() => dispatch(addItemToShoppingCart(newShoppingCartItem))}
+      onClick={() => {
+        dispatch(addItemToShoppingCart(newShoppingCartItem));
+        dispatch(updateShoppingCartOpen());
+      }}
     >
       ADD TO CART{" "}
       <span
