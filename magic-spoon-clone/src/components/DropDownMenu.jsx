@@ -7,11 +7,14 @@ const DropDownMenu = ({ data }) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const menuHeight = data.length === 3 ? "8rem" : "3.4rem";
+  console.log(menuHeight);
   return (
     <div
       className={`${
         isMenuOpen ? "bg-white " : " "
-      }relative hidden h-32 w-40 self-start font-bold text-purple duration-300 lg:block`}
+      }relative hidden w-40 self-start rounded-3xl font-bold text-purple duration-300 lg:block`}
+      style={{ height: menuHeight }}
       onMouseEnter={toggleMenu}
       onMouseLeave={toggleMenu}
     >
@@ -20,7 +23,7 @@ const DropDownMenu = ({ data }) => {
           {data[0].title}
         </button>
       </Link>
-      {isMenuOpen && (
+      {isMenuOpen && data.length > 1 && (
         <div className="absolute w-full pb-4 duration-300">
           {data.slice(1).map((item) => (
             <Link to={item.linkPath} key={data.id}>

@@ -1,21 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+const initialState = {
+  shoppingCartOpen: false,
+  itemsInShoppingCart: [],
+  totalItemsInShoppingCart: 0,
+  totalPriceInShoppingCart: 0,
+  totalDiscountedPriceInShoppingCart: 0,
+};
+
+// Retrieve state from local storage if available
+const savedState = localStorage.getItem("shoppingCartState");
+const parsedState = savedState ? JSON.parse(savedState) : {};
+
 export const shoppingCartSlice = createSlice({
   name: "shoppingCart",
-  initialState: {
-    shoppingCartOpen: false,
-    itemsInShoppingCart: [],
-    totalItemsInShoppingCart: 0,
-    totalPriceInShoppingCart: 0,
-    totalDiscountedPriceInShoppingCart: 0,
-  },
+  initialState: { ...initialState, ...parsedState },
   reducers: {
     updateShoppingCartOpen: (state) => {
       state.shoppingCartOpen = !state.shoppingCartOpen;
     },
     addItemToShoppingCart: (state, action) => {
       if (state.itemsInShoppingCart.length === 0) {
-        console.log("action.payload: ", action.payload);
         state.itemsInShoppingCart.push(action.payload);
       } else {
         const isProductInShoppingCart = state.itemsInShoppingCart.find(
@@ -119,6 +125,21 @@ export const updateAmountOfItemInShoppingCart =
     }
   };
 
+export const saveShopState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem("shoppingCartState", serializedState);
+  } catch (error) {
+    console.error("Error saving shop state to local storage:", error);
+  }
+};
+
+export const shopMiddleware = (store) => (next) => (action) => {
+  const result = next(action);
+  const state = store.getState().shoppingCart;
+  saveShopState(state);
+  return result;
+};
 
 export const selectShoppingCartOpen = (state) => state.shoppingCart.shoppingCartOpen;
 export const selectItemsInShoppingCart = (state) =>

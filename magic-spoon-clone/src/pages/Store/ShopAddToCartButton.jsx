@@ -22,21 +22,20 @@ const ShopAddToCartButton = ({ height, fontSize, my }) => {
   const size = useSelector(selectChosenSize);
   const amount = 1;
   const shoppingCartItemId = selectedShopItem.id + size;
+  const itemShopName = selectedShopItem.title + " - 1 case (" + size + " boxes)";
   let price;
   if (shopItemDiscountedPrice === 0) price = shopItemPrice;
   else price = Math.min(shopItemPrice, shopItemDiscountedPrice);
-  console.log("selectedShopItem: ", selectedShopItem);
-  console.log("shopItemPrice: ", shopItemPrice);
-  console.log("shopItemDiscountedPrice: ", shopItemDiscountedPrice);
   const newShoppingCartItem = {
     ...selectedShopItem,
     shoppingCartItemId: shoppingCartItemId,
+    itemShopName: itemShopName,
     originalPrice: price,
     price: price,
     size: size,
     amount: amount,
   };
-  console.log("newShoppingCartItem: ", newShoppingCartItem);
+  // console.log("newShoppingCartItem: ", newShoppingCartItem);
 
   useEffect(() => {
     dispatch(calculateActualShopPrice(toggledSubscription, size));

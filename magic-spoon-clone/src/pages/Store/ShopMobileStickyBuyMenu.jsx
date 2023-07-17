@@ -9,7 +9,7 @@ const ShopMobileStickyBuyMenu = () => {
   return (
     <div
       className={`${
-        shoppingCartOpen ? "opacity-0" : "opacity-100"
+        shoppingCartOpen ? "invisible opacity-0" : "visible opacity-100"
       } absolute bottom-0 z-40 flex w-full items-center justify-center bg-white pt-1 transition-opacity lg:hidden `}
     >
       <div className="flex w-[90%] flex-col items-center justify-center">

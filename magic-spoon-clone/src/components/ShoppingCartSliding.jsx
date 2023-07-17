@@ -76,18 +76,20 @@ const ShoppingCart = () => {
               <span>SUBTOTAL({shoppingCartItems.length} ITEMS)</span>
               <span>{"$" + (shoppingCartTotalPrice / 100).toFixed(2)}</span>
             </div>
-            <button
-              className="flex w-full items-center justify-center rounded-full bg-purple font-bold uppercase text-white lg:w-4/5"
-              style={{
-                height: "3rem",
-                fontSize: "1rem",
-                marginTop: "0.75rem",
-                marginBottom: "0.75rem",
-              }}
-              // onClick={() => dispatch(addItemToShoppingCart(newShoppingCartItem))}
-            >
-              CHECKOUT{" "}
-            </button>
+            <Link to="/checkout" className="w-full">
+              <button
+                className="flex w-full items-center justify-center rounded-full bg-purple font-bold uppercase text-white lg:w-4/5"
+                style={{
+                  height: "3rem",
+                  fontSize: "1rem",
+                  marginTop: "0.75rem",
+                  marginBottom: "0.75rem",
+                }}
+                // onClick={() => dispatch(updateShoppingCartOpen())}
+              >
+                CHECKOUT
+              </button>
+            </Link>
           </div>
         </div>
       </div>

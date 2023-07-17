@@ -14,6 +14,12 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
         aria-label="mobile"
       >
         <MobileMenuNav
+          text="SHOP NOW"
+          linkPath="/shop"
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+        />
+        <MobileMenuNav
           text="US VS. THEM"
           linkPath="/us-vs-them"
           menuOpen={menuOpen}
@@ -25,19 +31,8 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
         />
-        <MobileMenuNav
-          text="BUNDLES"
-          linkPath="/"
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-        />
-        <MobileMenuNav
-          text="CEREAL"
-          linkPath="/shop"
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-        />
-        <img src={holdOnToTheDream} alt="" className="mt-8 h-32 w-32 animate-spin-slow" />
+
+        <img src={holdOnToTheDream} alt="" className="mt-4 h-32 w-32 animate-spin-slow" />
       </nav>
     </section>
   );
