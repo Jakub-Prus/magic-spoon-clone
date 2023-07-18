@@ -77,3 +77,27 @@ export const canada_provinces = [
   { value: "SK", label: "Saskatchewan" },
   { value: "YT", label: "Yukon" },
 ];
+
+export const country_region = [
+  {
+    value: "United States",
+    label: "United States",
+    regions: "usa_states",
+    postalCodeRegex: /^\d{5}(-\d{4})?$/,
+    postalCodeRegexString: "^d{5}(-d{4})?$",
+  },
+  {
+    value: "Australia",
+    label: "Australia",
+    regions: "australia_states",
+    postalCodeRegex: /^[0-9]{4}$/,
+    postalCodeRegexString: "^[0-9]{4}$",
+  },
+  {
+    value: "Canada",
+    label: "Canada",
+    regions: "canada_provinces",
+    postalCodeRegex: /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/,
+    postalCodeRegexString: "^[A-Za-z]d[A-Za-z] d[A-Za-z]d$",
+  },
+];
