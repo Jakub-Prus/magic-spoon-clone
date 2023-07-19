@@ -11,6 +11,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import CheckoutOrderSummary from "./CheckoutOrderSummary";
 import MenuItem from "@mui/material/MenuItem";
 import { FormControl, FormHelperText, TextField } from "@mui/material";
+import CheckoutFormShipping from "./CheckoutFormShipping";
 
 import {
   usa_states,
@@ -170,172 +171,176 @@ const Checkout = () => {
                   <span className="ml-1 text-purple">Log in</span>
                 </span>
               </div>
-              <TextField
-                required
-                id="outlined-basic"
-                label="Email"
-                value={emailValue}
-                size="small"
-                className="my-4 w-full"
-                error={!isEmailValid}
-                helperText={!isEmailValid && "Please enter a valid email."}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setEmailValue(value);
-                  validateField(value, setIsEmailValid);
-                }}
-              />
-              <span className="text-lg font-normal">Shipping address</span>
-              <TextField
-                required
-                id="outlined-basic"
-                value={countryValue}
-                select
-                label="Country/region"
-                size="small"
-                className="mt-4 w-full"
-                onChange={handleInputCountryChange}
-              >
-                {country_region.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <TextField
-                required
-                id="outlined-basic"
-                label="First name"
-                value={firstNameValue}
-                size="small"
-                className="mt-4 w-full"
-                error={!isFirstNameValid}
-                helperText={!isFirstNameValid && "Please enter your first name."}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setFirstNameValue(value);
-                  validateField(value, setIsFirstNameValid);
-                }}
-              />
-              <TextField
-                required
-                id="outlined-basic"
-                value={lastNameValue}
-                label="Last name"
-                size="small"
-                className="mt-4 w-full"
-                error={!isLastNameValid}
-                helperText={!isLastNameValid && "Please enter your last name."}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setLastNameValue(value);
-                  validateField(value, setIsLastNameValid);
-                }}
-              />
-              <TextField
-                id="outlined-basic"
-                label="Company (optional)"
-                size="small"
-                className="mt-4 w-full"
-              />
-              <TextField
-                required
-                id="outlined-basic"
-                value={addressValue}
-                label="Address"
-                size="small"
-                className="mt-4 w-full"
-                error={!isAddressValid}
-                helperText={!isAddressValid && "Please enter your address."}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setAddressValue(value);
-                  validateField(value, setIsAddressValid);
-                }}
-              />
-              <TextField
-                id="outlined-basic"
-                label="Apartment, suite, etc. (optional)"
-                size="small"
-                className="mt-4 w-full"
-              />
-              <TextField
-                required
-                id="outlined-basic"
-                value={suburbValue}
-                label="Suburb"
-                size="small"
-                className="mt-4 w-full"
-                error={!isSuburbValid}
-                helperText={!isSuburbValid && "Please enter your suburb."}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSuburbValue(value);
-                  validateField(value, setIsSuburbValid);
-                }}
-              />
-              <TextField
-                required
-                id="outlined-basic"
-                select
-                value={state}
-                label="State/territory"
-                size="small"
-                className="mt-4 w-full"
-                onChange={handleInputStateChange}
-                error={!isStateValid}
-                helperText={!isStateValid && "Please enter your state."}
-              >
-                {statesValue.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-              <FormControl error={!isValidPostalCode} className="mt-4 w-full">
-                <TextField
-                  required
-                  id="outlined-basic"
-                  label="Postcode"
-                  value={postcodeValue}
-                  InputProps={{ inputProps: { pattern: postalCodeRegexString } }}
-                  size="small"
-                  onChange={handlePostCodeChange}
-                  error={!isPostcodeValid}
-                  helperText={!isPostcodeValid && "Please enter your postcode."}
-                />
-                {!isValidPostalCode && (
-                  <FormHelperText>Please enter a valid postal code.</FormHelperText>
-                )}
-              </FormControl>
-              <TextField
-                required
-                id="outlined-basic"
-                value={phoneValue}
-                label="Phone"
-                size="small"
-                className="mt-4 w-full"
-                error={!isPhoneValid}
-                helperText={!isPhoneValid && "Please enter your phone."}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setPhoneValue(value);
-                  validateField(value, setIsPhoneValid);
-                }}
-              />
-
-              <button
-                className="mt-4 h-16 w-full rounded-md bg-[#5b00ed] text-white"
-                onClick={handleContinueButtonClick}
-              >
-                Continue to shipping
-              </button>
-              {!isFormValid && (
-                <span className="w-full text-center text-sm text-red-600">
-                  Please fill in all required fields.
-                </span>
-              )}
             </div>
+            {/* //  <TextField
+        //         required
+        //         id="outlined-basic"
+        //         label="Email"
+        //         value={emailValue}
+        //         size="small"
+        //         className="my-4 w-full"
+        //         error={!isEmailValid}
+        //         helperText={!isEmailValid && "Please enter a valid email."}
+        //         onChange={(e) => {
+        //           const value = e.target.value;
+        //           setEmailValue(value);
+        //           validateField(value, setIsEmailValid);
+        //         }}
+        //       />
+        //       <span className="text-lg font-normal">Shipping address</span>
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         value={countryValue}
+        //         select
+        //         label="Country/region"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         onChange={handleInputCountryChange}
+        //       >
+        //         {country_region.map((option) => (
+        //           <MenuItem key={option.value} value={option.value}>
+        //             {option.label}
+        //           </MenuItem>
+        //         ))}
+        //       </TextField>
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         label="First name"
+        //         value={firstNameValue}
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         error={!isFirstNameValid}
+        //         helperText={!isFirstNameValid && "Please enter your first name."}
+        //         onChange={(e) => {
+        //           const value = e.target.value;
+        //           setFirstNameValue(value);
+        //           validateField(value, setIsFirstNameValid);
+        //         }}
+        //       />
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         value={lastNameValue}
+        //         label="Last name"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         error={!isLastNameValid}
+        //         helperText={!isLastNameValid && "Please enter your last name."}
+        //         onChange={(e) => {
+        //           const value = e.target.value;
+        //           setLastNameValue(value);
+        //           validateField(value, setIsLastNameValid);
+        //         }}
+        //       />
+        //       <TextField
+        //         id="outlined-basic"
+        //         label="Company (optional)"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //       />
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         value={addressValue}
+        //         label="Address"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         error={!isAddressValid}
+        //         helperText={!isAddressValid && "Please enter your address."}
+        //         onChange={(e) => {
+        //           const value = e.target.value;
+        //           setAddressValue(value);
+        //           validateField(value, setIsAddressValid);
+        //         }}
+        //       />
+        //       <TextField
+        //         id="outlined-basic"
+        //         label="Apartment, suite, etc. (optional)"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //       />
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         value={suburbValue}
+        //         label="Suburb"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         error={!isSuburbValid}
+        //         helperText={!isSuburbValid && "Please enter your suburb."}
+        //         onChange={(e) => {
+        //           const value = e.target.value;
+        //           setSuburbValue(value);
+        //           validateField(value, setIsSuburbValid);
+        //         }}
+        //       />
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         select
+        //         value={state}
+        //         label="State/territory"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         onChange={handleInputStateChange}
+        //         error={!isStateValid}
+        //         helperText={!isStateValid && "Please enter your state."}
+        //       >
+        //         {statesValue.map((option) => (
+        //           <MenuItem key={option.value} value={option.value}>
+        //             {option.label}
+        //           </MenuItem>
+        //         ))}
+        //       </TextField>
+        //       <FormControl error={!isValidPostalCode} className="mt-4 w-full">
+        //         <TextField
+        //           required
+        //           id="outlined-basic"
+        //           label="Postcode"
+        //           value={postcodeValue}
+        //           InputProps={{ inputProps: { pattern: postalCodeRegexString } }}
+        //           size="small"
+        //           onChange={handlePostCodeChange}
+        //           error={!isPostcodeValid}
+        //           helperText={!isPostcodeValid && "Please enter your postcode."}
+        //         />
+        //         {!isValidPostalCode && (
+        //           <FormHelperText>Please enter a valid postal code.</FormHelperText>
+        //         )}
+        //       </FormControl>
+        //       <TextField
+        //         required
+        //         id="outlined-basic"
+        //         value={phoneValue}
+        //         label="Phone"
+        //         size="small"
+        //         className="mt-4 w-full"
+        //         error={!isPhoneValid}
+        //         helperText={!isPhoneValid && "Please enter your phone."}
+        //         onChange={(e) => {
+        //           const value = e.target.value;
+        //           setPhoneValue(value);
+        //           validateField(value, setIsPhoneValid);
+        //         }}
+        //       />
+
+        //       <button
+        //         className="mt-4 h-16 w-full rounded-md bg-[#5b00ed] text-white"
+        //         onClick={handleContinueButtonClick}
+        //       >
+        //         Continue to shipping
+        //       </button>
+        //       {!isFormValid && (
+        //         <span className="w-full text-center text-sm text-red-600">
+        //           Please fill in all required fields.
+        //         </span>
+        //       )}
+        //     </div>
+        //   </div>
+        // </div> */}
+            <CheckoutFormShipping />
           </div>
         </div>
       )}
