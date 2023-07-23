@@ -1,27 +1,36 @@
-import { Grid, Container, Typography, MenuItem } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { TextfieldWrapper } from "../../components/form/TextfieldWrapper";
+import { SelectWrapper } from "../../components/form/SelectWrapper";
+import { ButtonWrapper } from "../../components/form/ButtonWrapper";
+import USStates from "../../data/USStates.json";
+import { useSelector, useDispatch } from "react-redux";
 import {
-  usa_states,
-  australia_states,
-  canada_provinces,
-} from "../../data/orderSummaryStates";
+  selectCheckoutInformation,
+  updateCheckoutInformation,
+} from "../../redux/checkoutSlice";
 
-const CheckoutFormShipping = () => {
-  const INITIAL_FORM_STATE = {
-    email: "",
-    country: "United States",
-    firstName: "",
-    lastName: "",
-    company: "",
-    address: "",
-    apartment: "",
-    suburb: "",
-    state: "",
-    postcode: "",
-    phone: "",
-  };
+const CheckoutFormInformation = () => {
+  const dispatch = useDispatch();
+  const checkoutInformation = useSelector(selectCheckoutInformation);
+
+  const INITIAL_FORM_STATE =
+    Object.keys(checkoutInformation).length === 0
+      ? {
+          email: "",
+          firstName: "",
+          lastName: "",
+          company: "",
+          address: "",
+          apartment: "",
+          suburb: "",
+          state: "AL",
+          postcode: "",
+          phone: "",
+        }
+      : checkoutInformation;
+
   const FORM_VALIDATION = Yup.object().shape({
     email: Yup.string().email("Invalid email.").required("Required"),
     firstName: Yup.string().required("Required"),
@@ -30,41 +39,15 @@ const CheckoutFormShipping = () => {
     address: Yup.string().required("Required"),
     suburb: Yup.string().required("Required"),
     state: Yup.string().required("Required"),
-    postcode: Yup.string().required("Required"),
+    postcode: Yup.string()
+      .required("Required")
+      .matches(/^\d{5}(-\d{4})?$/, "Invalid postal code"),
     phone: Yup.number().typeError("Please enter a valid phone number"),
   });
 
-  const states = [usa_states, australia_states, canada_provinces];
-  const country_region = [
-    {
-      value: "United States",
-      label: "United States",
-      regions: "usa_states",
-      postalCodeRegex: /^\d{5}(-\d{4})?$/,
-      postalCodeRegexString: "^d{5}(-d{4})?$",
-    },
-    {
-      value: "Australia",
-      label: "Australia",
-      regions: "australia_states",
-      postalCodeRegex: /^[0-9]{4}$/,
-      postalCodeRegexString: "^[0-9]{4}$",
-    },
-    {
-      value: "Canada",
-      label: "Canada",
-      regions: "canada_provinces",
-      postalCodeRegex: /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/,
-      postalCodeRegexString: "^[A-Za-z]d[A-Za-z] d[A-Za-z]d$",
-    },
-  ];
-
   return (
-    <div className="w-full">
+    <div className="mt-4 w-full">
       <Grid container>
-        <Grid item xs={12}>
-          test
-        </Grid>
         <Grid item xs={12}>
           <Container maxWidth="md">
             <Formik
@@ -72,6 +55,7 @@ const CheckoutFormShipping = () => {
               validationSchema={FORM_VALIDATION}
               onSubmit={(values) => {
                 console.log(values);
+                dispatch(updateCheckoutInformation(values));
               }}
             >
               <Form>
@@ -81,13 +65,11 @@ const CheckoutFormShipping = () => {
                   </Grid>
 
                   <Grid item xs={12}>
-                    <TextfieldWrapper name="country" select>
-                      {country_region.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                          {option.label}
-                        </MenuItem>
-                      ))}
-                    </TextfieldWrapper>
+                    <TextfieldWrapper
+                      value="United States"
+                      name="country"
+                      label="Country"
+                    />
                   </Grid>
 
                   <Grid item xs={6}>
@@ -106,33 +88,31 @@ const CheckoutFormShipping = () => {
                     <TextfieldWrapper name="address" label="Address" />
                   </Grid>
 
-                  <Grid item xs={12}>
+                  <Grid item xs={12} md={4}>
                     <TextfieldWrapper
                       name="apartment"
                       label="Apartment, suite, etc. (optional)"
                     />
                   </Grid>
 
-                  <Grid item xs={4}>
+                  <Grid item xs={12} md={4}>
                     <TextfieldWrapper name="suburb" label="Suburb" />
                   </Grid>
 
-                  <Grid item xs={4}>
-                    <TextfieldWrapper name="state" label="State/territory" select>
-                      {states.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                          {option.label}
-                        </MenuItem>
-                      ))}
-                    </TextfieldWrapper>
+                  <Grid item xs={12} md={4}>
+                    <SelectWrapper name="state" label="State" options={USStates} />
                   </Grid>
 
-                  <Grid item xs={4}>
+                  <Grid item xs={12}>
                     <TextfieldWrapper name="postcode" label="Postcode" />
                   </Grid>
 
                   <Grid item xs={12}>
                     <TextfieldWrapper name="phone" label="Phone" />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <ButtonWrapper>Continue to shipping</ButtonWrapper>
                   </Grid>
                 </Grid>
               </Form>
@@ -144,4 +124,4 @@ const CheckoutFormShipping = () => {
   );
 };
 
-export default CheckoutFormShipping;
+export default CheckoutFormInformation;

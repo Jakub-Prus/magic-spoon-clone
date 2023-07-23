@@ -26,7 +26,7 @@ const ShoppingCartElement = ({
             {productName + " - 1 case (" + size + " boxes)"}
           </h4>
           <button
-            onClick={() => dispatch(deleteItemInShoppingCart(productName))}
+            onClick={() => dispatch(deleteItemInShoppingCart(shoppingCartItemId))}
             className="flex items-center justify-center"
           >
             <ClearIcon style={{ width: "15px" }} />

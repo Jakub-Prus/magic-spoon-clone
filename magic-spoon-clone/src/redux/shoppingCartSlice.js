@@ -4,7 +4,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   shoppingCartOpen: false,
   itemsInShoppingCart: [],
-  totalItemsInShoppingCart: 0,
   totalPriceInShoppingCart: 0,
   totalDiscountedPriceInShoppingCart: 0,
 };
@@ -27,12 +26,14 @@ export const shoppingCartSlice = createSlice({
         const isProductInShoppingCart = state.itemsInShoppingCart.find(
           (element) => element.shoppingCartItemId === action.payload.shoppingCartItemId
         );
-        if (!isProductInShoppingCart) state.itemsInShoppingCart.push(action.payload);
+        if (!isProductInShoppingCart) {
+          state.itemsInShoppingCart.push(action.payload);
+        }
       }
     },
     deleteItemInShoppingCart: (state, action) => {
       const updatedItemsInShoppingCart = state.itemsInShoppingCart.filter(
-        (element) => element.id !== action.payload
+        (element) => element.shoppingCartItemId !== action.payload
       );
 
       state.itemsInShoppingCart = updatedItemsInShoppingCart;
@@ -144,8 +145,6 @@ export const shopMiddleware = (store) => (next) => (action) => {
 export const selectShoppingCartOpen = (state) => state.shoppingCart.shoppingCartOpen;
 export const selectItemsInShoppingCart = (state) =>
   state.shoppingCart.itemsInShoppingCart;
-export const selectTotalItemsInShoppingCart = (state) =>
-  state.shoppingCart.totalItemsInShoppingCart;
 export const selectTotalPriceInShoppingCart = (state) =>
   state.shoppingCart.totalPriceInShoppingCart;
 export const selectTotalDiscountedPriceInShoppingCart = (state) =>
