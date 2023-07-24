@@ -16,7 +16,7 @@ export const ButtonWrapper = ({ children, ...otherProps }) => {
   };
 
   return (
-    <Button {...configButton} style={{ backgroundColor: "#5b00ed", height: "3rem" }}>
+    <Button {...configButton} style={{ backgroundColor: "#5b00ed", height: "4rem" }}>
       {children}
     </Button>
   );

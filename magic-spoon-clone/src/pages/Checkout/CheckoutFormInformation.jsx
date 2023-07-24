@@ -11,6 +11,8 @@ import {
   updateCheckoutInformation,
   updatePartOfCheckout,
 } from "../../redux/checkoutSlice";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import { Link } from "react-router-dom";
 
 const CheckoutFormInformation = () => {
   const dispatch = useDispatch();
@@ -124,6 +126,12 @@ const CheckoutFormInformation = () => {
           </Container>
         </Grid>
       </Grid>
+      <Link to="/">
+        <div className="mt-4 flex cursor-pointer flex-row items-center justify-center text-purple">
+          <KeyboardArrowLeftIcon />
+          Return to cart
+        </div>
+      </Link>
     </div>
   );
 };

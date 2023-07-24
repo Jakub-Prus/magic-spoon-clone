@@ -14,7 +14,7 @@ const CheckoutMobileSumPrice = () => {
   const showOrderSummary = useSelector(selectShowOrderSummary);
 
   return (
-    <div className="w-full bg-[#fafafa] py-4">
+    <div className="w-screen bg-[#fafafa] py-4">
       <div
         className="m-auto flex w-[90%] flex-row items-center justify-between "
         onClick={() => dispatch(updateShowOrderSummary())}
