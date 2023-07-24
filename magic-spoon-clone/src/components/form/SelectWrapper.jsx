@@ -6,7 +6,9 @@ export const SelectWrapper = ({ name, options, ...otherProps }) => {
   const [field, meta] = useField(name);
 
   const handleChange = (evt) => {
+    console.log(evt);
     const { value } = evt.target;
+    console.log(name, value);
     setFieldValue(name, value);
   };
 

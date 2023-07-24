@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectCheckoutInformation,
   updateCheckoutInformation,
+  updatePartOfCheckout,
 } from "../../redux/checkoutSlice";
 
 const CheckoutFormInformation = () => {
@@ -21,12 +22,13 @@ const CheckoutFormInformation = () => {
           email: "",
           firstName: "",
           lastName: "",
+          country: "United States",
           company: "",
           address: "",
           apartment: "",
           suburb: "",
-          state: "AL",
-          postcode: "",
+          state: "",
+          zipcode: "",
           phone: "",
         }
       : checkoutInformation;
@@ -39,7 +41,7 @@ const CheckoutFormInformation = () => {
     address: Yup.string().required("Required"),
     suburb: Yup.string().required("Required"),
     state: Yup.string().required("Required"),
-    postcode: Yup.string()
+    zipcode: Yup.string()
       .required("Required")
       .matches(/^\d{5}(-\d{4})?$/, "Invalid postal code"),
     phone: Yup.number().typeError("Please enter a valid phone number"),
@@ -56,6 +58,7 @@ const CheckoutFormInformation = () => {
               onSubmit={(values) => {
                 console.log(values);
                 dispatch(updateCheckoutInformation(values));
+                dispatch(updatePartOfCheckout("shipping"));
               }}
             >
               <Form>
@@ -69,6 +72,7 @@ const CheckoutFormInformation = () => {
                       value="United States"
                       name="country"
                       label="Country"
+                      disabled
                     />
                   </Grid>
 
@@ -104,7 +108,7 @@ const CheckoutFormInformation = () => {
                   </Grid>
 
                   <Grid item xs={12}>
-                    <TextfieldWrapper name="postcode" label="Postcode" />
+                    <TextfieldWrapper name="zipcode" label="Zipcode" />
                   </Grid>
 
                   <Grid item xs={12}>
