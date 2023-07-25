@@ -16,12 +16,33 @@ const ShopProductReview = () => {
         <ShopRatingStars rating={productRating} />
         <div className="font-bold">Based on {numberReviews} reviews</div>
       </div>
-      <div className="w-3/4">
+      <div className="flex w-3/4 flex-col items-center">
         <ShopCustomerReview
           customerName="John D."
           title="Healthy and Tasty!"
           stars={4}
           content="Love this cereal for breakfast! It's healthy and doesn't compromise on taste. A perfect way to start the day!"
+        />
+
+        <ShopCustomerReview
+          customerName="Sarah L."
+          title="Great for Kids"
+          stars={5}
+          content="My kids absolutely love this cereal. It's hard finding something they like that isn't loaded with sugar. This cereal is a winner for us!"
+        />
+
+        <ShopCustomerReview
+          customerName="Mike P."
+          title="Yummy Snack"
+          stars={5}
+          content="This isn't just for breakfast, it's a great snack for any time of the day. The hint of sweetness is just right. Highly recommend it!"
+        />
+
+        <ShopCustomerReview
+          customerName="Emma H."
+          title="Delicious and Nutritious"
+          stars={4.5}
+          content="This cereal is a game changer. It's delicious and nutritious. It's become a staple in my pantry. Can't wait to try other flavors!"
         />
       </div>
     </div>
