@@ -12,6 +12,7 @@ import backgroundBottomRightDesktop2 from "../assets/img/call-to-action/call-to-
 import backgroundBottomLeftDesktop from "../assets/img/call-to-action/call-to-action-background-bottom-left.svg";
 import backgroundBottomLeftDesktop2 from "../assets/img/call-to-action/call-to-action-background-bottom-left2.svg";
 import backgroundStar from "../assets/img/call-to-action/star.svg";
+import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
@@ -22,10 +23,12 @@ const CallToAction = () => {
       <div className="relative z-30 flex w-full flex-col items-center md:flex-row md:justify-center">
         <img src={cerealBoxes} alt="" className="z-40 block md:hidden" />
         <div className="z-50 flex flex-col items-center">
-          <h2 className="z-50 hidden w-96 text-center text-8xl text-white md:block">
+          <h2 className="z-50 mb-6 hidden w-96 text-center text-8xl text-white md:block">
             A whole world of flavor.
           </h2>
-          <Button text={"TRY NOW"} />
+          <Link to="/shop">
+            <Button text={"TRY NOW"} />
+          </Link>
         </div>
         <img
           src={cerealBoxesCerealBoxesRight}

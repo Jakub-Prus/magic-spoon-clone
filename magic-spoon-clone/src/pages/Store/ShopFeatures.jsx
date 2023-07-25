@@ -1,9 +1,6 @@
 import ShopFeature from "./ShopFeature";
-import useScrollPosition from "../../hooks/useScrollPosition";
 
 const ShopFeatures = () => {
-  useScrollPosition();
-
   return (
     <div className="relative flex w-screen flex-col items-center justify-center bg-[#bfefff] pt-10 text-sm font-semibold text-purple lg:flex-row lg:py-16">
       <img

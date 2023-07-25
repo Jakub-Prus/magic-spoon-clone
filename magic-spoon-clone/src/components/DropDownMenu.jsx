@@ -8,7 +8,6 @@ const DropDownMenu = ({ data }) => {
     setIsMenuOpen(!isMenuOpen);
   };
   const menuHeight = data.length === 3 ? "8rem" : "3.4rem";
-  console.log(menuHeight);
   return (
     <div
       className={`${

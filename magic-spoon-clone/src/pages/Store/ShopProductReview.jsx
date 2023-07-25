@@ -18,10 +18,10 @@ const ShopProductReview = () => {
       </div>
       <div className="w-3/4">
         <ShopCustomerReview
-          customerName="IAN O."
-          title="A DELICIOUS SNACK"
-          stars={5}
-          content="This cereal is a really fantastic late night snack that is light an sweet but not loaded in sugar. A healthy splash of milk and you’ll think you’re having a strawberry shake!"
+          customerName="John D."
+          title="Healthy and Tasty!"
+          stars={4}
+          content="Love this cereal for breakfast! It's healthy and doesn't compromise on taste. A perfect way to start the day!"
         />
       </div>
     </div>

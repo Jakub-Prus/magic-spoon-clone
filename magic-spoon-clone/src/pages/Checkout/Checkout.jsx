@@ -16,16 +16,16 @@ const Checkout = () => {
   return (
     <div className="flex w-full flex-col items-center">
       <CheckoutBanner />
+      <CheckoutMobileSumPrice />
 
       <div
         style={{
           transform: showOrderSummary
-            ? `translateY(${totalItemsInShoppingCart * 80 + 330}px)`
+            ? `translateY(${totalItemsInShoppingCart * 90 + 330}px)`
             : undefined,
         }}
         className={`mb-8 flex w-full flex-col items-center justify-center transition-transform duration-300 ease-in-out lg:w-3/5 `}
       >
-        <CheckoutMobileSumPrice />
         {/* {partOfCheckout === "information" && <CheckoutSecondBanner />} */}
         {partOfCheckout === "information" && <CheckoutFormInformation />}
         {partOfCheckout === "shipping" && <CheckoutShipping />}

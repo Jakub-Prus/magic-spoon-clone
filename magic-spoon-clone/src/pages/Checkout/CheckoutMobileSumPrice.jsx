@@ -14,9 +14,9 @@ const CheckoutMobileSumPrice = () => {
   const showOrderSummary = useSelector(selectShowOrderSummary);
 
   return (
-    <div className="w-screen bg-[#fafafa] py-4">
+    <div className="mb-4 flex w-full flex-col items-center bg-[#fafafa] pt-4">
       <div
-        className="m-auto flex w-[90%] flex-row items-center justify-between "
+        className="m-auto flex w-[90%] flex-row items-center justify-between lg:w-3/5 "
         onClick={() => dispatch(updateShowOrderSummary())}
       >
         <div className="text-purple">
@@ -28,8 +28,8 @@ const CheckoutMobileSumPrice = () => {
         </div>
         <span className="text-lg">{"$" + (totalPrice / 100).toFixed(2)}</span>
       </div>
-      <span className="w-full border-b-[1px] border-b-gray-300"></span>
-      <div className="relative w-full">
+      <span className="w-screen border-b-[1px] border-b-gray-300 pt-3"></span>
+      <div className="relative flex w-full flex-col items-center justify-center ">
         <CheckoutOrderSummary showOrderSummary={showOrderSummary} />
       </div>
     </div>

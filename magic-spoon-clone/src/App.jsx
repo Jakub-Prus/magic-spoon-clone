@@ -14,7 +14,7 @@ function App() {
   const isCheckoutOpen = location.pathname.includes("/checkout");
 
   return (
-    <div className="flex h-screen min-h-screen w-screen grow flex-col items-center justify-start overflow-x-hidden font-maven font-medium">
+    <div className="flex h-full min-h-screen w-full grow flex-col items-center justify-start overflow-y-auto overflow-x-hidden font-maven font-medium">
       {!isCheckoutOpen && <Promotion amount="50" />}
       {!isCheckoutOpen && <Nav />}
       <Routes>

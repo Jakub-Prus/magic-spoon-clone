@@ -53,9 +53,9 @@ const Nav = () => {
       <div className="z-30 flex min-w-[76px] justify-between self-start text-purple">
         <DropDownMenu data={dropDownMenuRight} />
         <div className="sm:ml-8">
-          <Link to="/">
+          {/* <Link to="/">
             <PersonIcon style={{ fontSize: iconSize }} />
-          </Link>
+          </Link> */}
 
           <ShoppingBasketIcon
             style={{ fontSize: iconSize, marginLeft: "2rem" }}

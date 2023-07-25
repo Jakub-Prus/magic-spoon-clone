@@ -2,6 +2,7 @@ import { testimonialsData } from "../data/testimonialsData";
 import TestimonialsCarousel from "./TestimonialsCarousel";
 import TestimonialsCarouselItem from "./TestimonialsCarouselItem";
 import gifFromSide from "../assets/img/magic-spoon-home-pb2.webp";
+import { Link } from "react-router-dom";
 
 const Testimonials = () => {
   return (
@@ -31,9 +32,11 @@ const Testimonials = () => {
             but our cereal didn`t?
           </span>
         </h2>
-        <button className="mt-8 w-56 rounded-full border border-white px-8 py-3 text-xl font-bold text-white md:ml-10 md:border-2 md:px-2 md:py-3 md:text-2xl">
-          OUR STORY
-        </button>
+        <Link to="/our-story">
+          <button className="mt-8 w-56 rounded-full border border-white px-8 py-3 text-xl font-bold text-white md:ml-10 md:border-2 md:px-2 md:py-3 md:text-2xl">
+            OUR STORY
+          </button>
+        </Link>
         <img src={gifFromSide} alt="" className="hidden max-w-[400px] md:block" />
       </div>
     </div>

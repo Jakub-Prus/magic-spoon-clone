@@ -25,12 +25,12 @@ const ShoppingCart = () => {
     <div
       className={`${
         shoppingCartOpen ? "visible opacity-100" : "invisible opacity-0 "
-      }text-purple pointer-events-none absolute left-0 top-0 z-50 h-screen w-screen overflow-hidden bg-[#6e64c8bf] transition-opacity duration-300 ease-in-out`}
+      }text-purple pointer-events-none absolute left-0 top-0 z-50 h-screen w-full overflow-hidden bg-[#6e64c8bf] transition-opacity duration-300 ease-in-out`}
     >
       <div
         className={`${
           shoppingCartOpen ? "translate-x-0 " : "translate-x-full "
-        } pointer-events-auto absolute right-0 top-0 flex h-full w-screen flex-col bg-white px-5 py-3 transition-transform duration-300 ease-in-out md:w-[70vw] lg:w-[40vw]`}
+        } pointer-events-auto absolute right-0 top-0 flex h-full w-full flex-col bg-white px-5 py-3 transition-transform duration-300 ease-in-out md:w-[70vw] lg:w-[40vw]`}
       >
         <div className="flex w-full flex-row justify-between border-b-2 border-black">
           <button
@@ -78,7 +78,7 @@ const ShoppingCart = () => {
             </div>
             <Link to="/checkout" className="w-full">
               <button
-                className="flex w-full items-center justify-center rounded-full bg-purple font-bold uppercase text-white lg:w-4/5"
+                className="flex w-full items-center justify-center rounded-full bg-purple font-bold uppercase text-white"
                 style={{
                   height: "3rem",
                   fontSize: "1rem",

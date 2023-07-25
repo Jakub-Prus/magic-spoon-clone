@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const LastCallToAction = () => {
   return (
@@ -16,7 +17,9 @@ const LastCallToAction = () => {
             100% Guaranteed
           </span>
         </h2>
-        <Button text={"TRY NOW"} />
+        <Link to="/shop">
+          <Button text={"TRY NOW"} otherProps={"w-56"} />
+        </Link>
       </div>
       <a href="" className="mt-8 text-sm font-semibold md:mb-8 md:mt-0">
         SEE TERMS OF USE.

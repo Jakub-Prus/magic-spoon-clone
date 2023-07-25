@@ -9,7 +9,7 @@ import LastCallToAction from "../../components/LastCallToAction";
 
 const Home = () => {
   return (
-    <div className="flex w-full grow flex-col items-center justify-start">
+    <div className="flex w-full grow flex-col items-center justify-start overflow-x-hidden">
       <Hero />
       <DraggableSlider />
       <QuotesCarousel />

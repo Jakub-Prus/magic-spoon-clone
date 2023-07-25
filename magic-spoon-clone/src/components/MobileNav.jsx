@@ -7,7 +7,7 @@ const MobileNav = ({ menuOpen, setMenuOpen }) => {
       // id="mobile-menu"
       className={`${
         menuOpen ? "flex " : "hidden "
-      } top-68 justify-content-center absolute left-0 top-10 z-20 w-screen origin-top animate-open-menu flex-col items-center bg-black bg-gradient-to-r from-[#A6F6FF] to-[#FFEE83] text-5xl`}
+      } top-68 justify-content-center absolute left-0 top-10 z-20 w-full origin-top animate-open-menu flex-col items-center bg-black bg-gradient-to-r from-[#A6F6FF] to-[#FFEE83] text-5xl`}
     >
       <nav
         className="section-min-height z-10 mt-20 flex flex-col items-center pt-8 text-transparent"
