@@ -1,7 +1,7 @@
 import { Avatar } from "@mui/material";
 
 const ShopDetailedImages = ({ product }) => {
-  const absolutePath = "assets/img/store/detailed-img/";
+  const absolutePath = "./assets/img/store/detailed-img/";
 
   let detailedPictures = [];
   for (let i = 1; i <= 5; i++) {

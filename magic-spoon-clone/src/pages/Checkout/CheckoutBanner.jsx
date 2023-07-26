@@ -9,7 +9,7 @@ const CheckoutBanner = () => {
     <div className="flex w-screen items-center justify-center bg-[url('assets/img/checkout/background-baner.png')] bg-cover">
       <Link to="/">
         <img
-          src="assets/img/checkout/white-logo.webp"
+          src="./assets/img/checkout/white-logo.webp"
           alt=""
           className="my-6 max-h-11"
           onClick={() => dispatch(updatePartOfCheckout("information"))}

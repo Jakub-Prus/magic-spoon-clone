@@ -1,5 +1,5 @@
 const CheckoutOrderSummaryElement = ({ productId, itemShopName, amount, price }) => {
-  const absoluteMainImgPath = "assets/img/store/main-img/";
+  const absoluteMainImgPath = "./assets/img/store/main-img/";
   return (
     <div className="mb-5 flex w-full flex-row items-center justify-around">
       <div className="flex w-full flex-row items-center">

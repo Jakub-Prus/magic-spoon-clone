@@ -2,12 +2,12 @@ const ShopUsVsThem = () => {
   return (
     <div className="relative flex w-full flex-col items-center bg-[#bfefff] py-12 text-purple lg:flex-row">
       {/* <img
-        src="assets/img/store/us-vs-them.svg"
+        src="./assets/img/store/us-vs-them.svg"
         alt=""
         className="absolute -top-[9rem] left-0 z-20 h-[50vh] w-screen rotate-90 md:-top-[17rem] md:h-[60vh] lg:left-[-45%] lg:top-[10%] lg:h-[80vh] lg:rotate-0"
       /> */}
       <img
-        src="assets/img/store/us-vs-them.svg"
+        src="./assets/img/store/us-vs-them.svg"
         alt=""
         className="absolute top-0 h-[98vw] -translate-y-[43%] rotate-90 lg:h-full lg:-translate-y-[0%] lg:rotate-0"
       />
@@ -16,7 +16,7 @@ const ShopUsVsThem = () => {
           How do we stack up to the “classics”?
         </h3>
         <img
-          src="assets/img/store/charts/chart-variety.webp"
+          src="./assets/img/store/charts/chart-variety.webp"
           alt=""
           className="w-[90%]"
         />

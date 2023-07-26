@@ -77,7 +77,7 @@ const MainFeatures = () => {
             className="absolute right-5 top-10 z-20 h-32 w-32 animate-spin-slow md:right-24 md:top-3/4 md:h-44 md:w-44"
           />
           <img
-            src="assets/img/cereal-boxes.jpg"
+            src="./assets/img/cereal-boxes.jpg"
             alt="cereal boxes"
             className="mt-20 md:mt-0 md:w-[66vw]"
           />
