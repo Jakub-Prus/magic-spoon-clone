@@ -13,7 +13,7 @@ const ShoppingCartElement = ({
   amount,
 }) => {
   const dispatch = useDispatch();
-  const absoluteMainImgPath = "src/assets/img/store/main-img/";
+  const absoluteMainImgPath = "assets/img/store/main-img/";
 
   return (
     <div className="-mt-[2px] mb-4 flex w-full flex-row justify-start border-t-2 border-black px-2 pt-4">

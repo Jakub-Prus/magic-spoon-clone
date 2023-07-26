@@ -6,10 +6,10 @@ const CheckoutBanner = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex w-screen items-center justify-center bg-[url('src/assets/img/checkout/background-baner.png')] bg-cover">
+    <div className="flex w-screen items-center justify-center bg-[url('assets/img/checkout/background-baner.png')] bg-cover">
       <Link to="/">
         <img
-          src="src/assets/img/checkout/white-logo.webp"
+          src="assets/img/checkout/white-logo.webp"
           alt=""
           className="my-6 max-h-11"
           onClick={() => dispatch(updatePartOfCheckout("information"))}

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { selectChosenItem } from "../../redux/shopSlice";
 
 const ShopItemDetails = () => {
-  const absoluteMainImgPath = "src/assets/img/store/main-img/";
+  const absoluteMainImgPath = "assets/img/store/main-img/";
   const selectedItem = useSelector(selectChosenItem);
   return (
     <div className="mb-2 flex w-full flex-col items-center justify-center text-purple">

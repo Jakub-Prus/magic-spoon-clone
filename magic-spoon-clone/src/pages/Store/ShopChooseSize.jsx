@@ -44,7 +44,7 @@ const ShopChooseSize = ({
         6 PACK
       </button>
       <img
-        src="/src/assets/img/store/5-discount.svg"
+        src="/assets/img/store/5-discount.svg"
         alt=""
         className="absolute -right-4 -top-3"
       />
