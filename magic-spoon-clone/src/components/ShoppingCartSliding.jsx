@@ -25,7 +25,7 @@ const ShoppingCart = () => {
     <div
       className={`${
         shoppingCartOpen ? "visible opacity-100" : "invisible opacity-0 "
-      }text-purple pointer-events-none absolute left-0 top-0 z-50 h-screen w-full overflow-hidden bg-[#6e64c8bf] transition-opacity duration-300 ease-in-out`}
+      }text-purple pointer-events-none fixed left-0 top-0 z-50 h-screen w-full overflow-hidden bg-[#6e64c8bf] transition-opacity duration-300 ease-in-out`}
     >
       <div
         className={`${

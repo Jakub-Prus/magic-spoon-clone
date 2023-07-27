@@ -58,7 +58,7 @@ const Nav = () => {
           </Link> */}
 
           <ShoppingBasketIcon
-            style={{ fontSize: iconSize, marginLeft: "2rem" }}
+            style={{ fontSize: iconSize, marginLeft: "2rem", cursor: "pointer" }}
             onClick={() => dispatch(updateShoppingCartOpen())}
           />
           <ShoppingCart />
