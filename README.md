@@ -1,11 +1,22 @@
 # Magic spoon clone
 Project created as clone of website magicspoon.com.
-Original website is created using shopify and works slow because of constant reloads. I made react version of it so it can work fast and reliable.
+Original website is created using shopify and works slow because of constant reloads. I made react version of it with custom components so it can work fast and reliable.
 
-Key Features:
-	•  
+## Live demo- https://magic-spoon-clone.vercel.app/
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/407a8e80-4f0b-4871-90d5-f36e3165bc1c" alt="magicspoon1" width="400"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/fddbedfa-5548-48be-95f6-0ce78d75ca73" alt="magicspoon1" width="400"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/9ba2ff57-9200-42b5-8ed2-6f50a8aee402" alt="magicspoon1" width="400"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/3ff9cda4-7476-496f-a405-b5a8539f59cb" alt="magicspoon1" width="400"/>
 
-Technologies used:
+## Key Features:
+	•  Responsive UI
+	•  Shopping Cart
+	•  Fast and reliable shop page
+	•  Forms for information and shipping with validation
+	•  Connected paypal
+	•  Content carousels for smaller screens
+
+## Built with:
 
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white&style=for-the-badge)
@@ -20,41 +31,6 @@ Technologies used:
 ![Vercel](https://img.shields.io/badge/-Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge)
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge)
 
-
-
-Original website is made using shopify so every component I had to make myself. I used it as a reference guide for what website should look and work like. The same as figma file.
-
-# Magic spoon clone
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Built With](#built-with)
-- [Features](#features)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
-
-## Overview
-
-<!-- TODO: Add a screenshot of the live project.
-    1. Link to a 'live demo.'
-    2. Describe your overall experience in a couple of sentences.
-    3. List a few specific technical things that you learned or improved on.
-    4. Share any other tips or guidance for others attempting this or something similar.
- -->
-
-### Built With
-
-<!-- TODO: List any MAJOR libraries/frameworks (e.g. React, Tailwind) with links to their homepages. -->
-
-## Features
-
-<!-- TODO: List what specific 'user problems' that this application solves. -->
-
 ## Contact
+You can find me on [LinkedIn](https://www.linkedin.com/in/jakub-prus/), or send me an email at jakub.prus03@gmail.com.
 
-<!-- TODO: Include icons and links to your RELEVANT, PROFESSIONAL 'DEV-ORIENTED' social media. LinkedIn and dev.to are minimum. -->
-
-## Acknowledgements
-
-<!-- TODO: List any blog posts, tutorials or plugins that you may have used to complete the project. Only list those that had a significant impact. Obviously, we all 'Google' stuff while working on our things, but maybe something in particular stood out as a 'major contributor' to your skill set for this project. -->
