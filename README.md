@@ -3,10 +3,10 @@ Project created as clone of website magicspoon.com.
 Original website is created using shopify and works slow because of constant reloads. I made react version of it with custom components so it can work fast and reliable.
 
 ## Live demo- https://magic-spoon-clone.vercel.app/
-<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/407a8e80-4f0b-4871-90d5-f36e3165bc1c" alt="magicspoon1" width="400"/>
-<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/fddbedfa-5548-48be-95f6-0ce78d75ca73" alt="magicspoon1" width="400"/>
-<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/9ba2ff57-9200-42b5-8ed2-6f50a8aee402" alt="magicspoon1" width="400"/>
-<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/3ff9cda4-7476-496f-a405-b5a8539f59cb" alt="magicspoon1" width="400"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/407a8e80-4f0b-4871-90d5-f36e3165bc1c" alt="magicspoon1" width="340"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/fddbedfa-5548-48be-95f6-0ce78d75ca73" alt="magicspoon1" width="340"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/9ba2ff57-9200-42b5-8ed2-6f50a8aee402" alt="magicspoon1" width="340"/>
+<img src="https://github.com/Jakub-Prus/magic-spoon-clone/assets/68164819/3ff9cda4-7476-496f-a405-b5a8539f59cb" alt="magicspoon1" width="340"/>
 
 ## Key Features:
 	•  Responsive UI
